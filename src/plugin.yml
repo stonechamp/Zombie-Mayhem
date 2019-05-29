@@ -1,0 +1,8 @@
+name: Mayhem
+main: me.champ.zm.Core
+description: Game plugin
+author: Champ
+version: 0.1
+commands:
+  zm:
+    usage: /zm

@@ -1,0 +1,11 @@
+# Basic plugin options.
+message-prefix: "&7[&c&lZombie Mayhem&7]"
+
+# Lobby world: Use /zm setspawn lobby to set the spawn in the specified world.
+lobby-world:
+  name: "world"
+
+# Game Options
+minimum-players: 1
+maximum-players: 10
+game-timer: 300
