@@ -105,6 +105,7 @@ public class Game {
 						startGameTimer();
 					}
 					this.cancel();
+					lobbyTimer = 11;
 				}
 				
 			}

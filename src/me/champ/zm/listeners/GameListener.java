@@ -53,7 +53,7 @@ public class GameListener implements Listener {
 	
 	@EventHandler
 	public void onDeath(PlayerDeathEvent event) {
-		event.setDeathMessage(" ");
+		event.setDeathMessage("");
 		event.getEntity().sendMessage(ChatColor.GRAY + "[*]" + ChatColor.YELLOW + " You have been escorted back to the lobby");
 		Player player = event.getEntity();
 		String worldName = plugin.getConfig().getString("lobby-world.name");
@@ -89,7 +89,7 @@ public class GameListener implements Listener {
 				Game game = plugin.getGame(damager.getWorld().getName());
 				if (game != null) {
 					if (damager.getWorld() == Bukkit.getWorld(game.getName())) {
-						if (game.getState() == game.getState().LOBBY) {
+						if (game.isState(State.START)) {
 							event.setCancelled(true);
 						}
 					}
@@ -104,8 +104,15 @@ public class GameListener implements Listener {
 		if (event.getEntity() instanceof Player) {
 			Player player = (Player) event.getEntity();
 			World world = player.getWorld();
+			Game game = plugin.getGame(world.getName());
 			if (world.getName().equalsIgnoreCase(plugin.getLobbyWorld())) {
 				event.setCancelled(true);
+			}
+			
+			if (game != null) {
+				if (game.isState(State.START)) {
+					event.setCancelled(true);
+				}
 			}
 		}
 	}
