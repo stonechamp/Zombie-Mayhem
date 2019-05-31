@@ -34,13 +34,14 @@ public class PlaceCommand extends SubCommand {
 			
 			//TODO: Place game sign.
 			String gameName = args[2];
+
 			int playerCount = Bukkit.getWorld(gameName).getPlayers().size();
 			Location location = player.getLocation();
 			location.getWorld().getBlockAt(location).setType(Material.SIGN_POST);
 			Sign sign = (Sign) player.getWorld().getBlockAt(location).getState();
 			sign.setLine(0, ChatColor.GREEN + "[JOIN]");
-			sign.setLine(2, ChatColor.DARK_GRAY + "(" + ChatColor.AQUA + playerCount + ChatColor.DARK_GRAY + "/" + ChatColor.AQUA + plugin.getMaxPlayers() + ChatColor.DARK_GRAY + ")");
-			sign.setLine(3, ChatColor.GOLD + "" + ChatColor.BOLD + "(Right Click)");
+			sign.setLine(2, ChatColor.GOLD + "" + ChatColor.BOLD + gameName);
+			sign.setLine(3, ChatColor.DARK_GRAY + "(" + ChatColor.AQUA + playerCount + ChatColor.DARK_GRAY + "/" + ChatColor.AQUA + plugin.getMaxPlayers() + ChatColor.DARK_GRAY + ")");
 			sign.update();
 		}
 

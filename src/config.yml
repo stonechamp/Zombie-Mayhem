@@ -1,5 +1,6 @@
 # Basic plugin options.
-message-prefix: "&7[&c&lZombie Mayhem&7]"
+message-prefix: "&c&lZombie Mayhem&7&l>>"
+boss-bar-message: "&b&lTest"
 
 # Lobby world: Use /zm setspawn lobby to set the spawn in the specified world.
 lobby-world:

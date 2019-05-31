@@ -3,6 +3,7 @@ main: me.champ.zm.Core
 description: Game plugin
 author: Champ
 version: 0.1
+depends: [ProtocolLib, Vault]
 commands:
   zm:
     usage: /zm

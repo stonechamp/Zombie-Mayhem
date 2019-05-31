@@ -67,7 +67,7 @@ public class SetSpawnCommand extends SubCommand {
 				DataHandler.getGameFile().set("games." + gameName + ".spawn.z", z);
 				DataHandler.saveGameConfig();
 				player.sendMessage(plugin.getPrefix() + ChatColor.GREEN + " Spawn set for game: " + ChatColor.YELLOW + gameName);
-				Location loc = new Location(Bukkit.getWorld(plugin.getLobbyWorld()), 100, 0, 0);
+				Location loc = new Location(Bukkit.getWorld(plugin.getLobbyWorld()), DataHandler.getGameFile().getDouble("lobby-world.spawn.x"), DataHandler.getGameFile().getDouble("lobby-world.spawn.y"), DataHandler.getGameFile().getDouble("lobby-world.spawn.z"));
 				player.teleport(loc);
 			}
 			
